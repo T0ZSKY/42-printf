@@ -6,7 +6,7 @@
 /*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 03:40:46 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/09 06:51:31 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/09 06:53:57 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,3 @@ int	write_number(va_list args)
 	write(1, str, len);
 	return (len);
 }
-

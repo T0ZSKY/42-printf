@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 04:40:31 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/09 04:40:48 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/09 06:53:24 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	write_hex(va_list args, char format)
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
-
 	len = 0;
 	if (num == 0)
 	{

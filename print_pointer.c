@@ -6,7 +6,7 @@
 /*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 04:32:08 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/09 06:51:19 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/09 06:54:27 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void	ft_putnbr_base(unsigned long long n, char *base, int *len)
 
 int	write_pointer(va_list args)
 {
-	void	*ptr;
+	void				*ptr;
 	unsigned long long	addr;
-	int		len;
+	int					len;
 
 	ptr = va_arg(args, void *);
 	addr = (unsigned long long)ptr;
