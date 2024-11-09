@@ -10,41 +10,39 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./includes/
-RM = rm -rf
-
 NAME = libftprintf.a
 
-# Fichiers source
-SRCS = printf.c \
-       print_number.c \
-       print_pointer.c \
-       print_unsigned.c \
-       print_char.c \
-       print_hex.c
+SRC_PATH = ./
 
-OBJS = $(SRCS:.c=.o)
+SRC_NAME = printf.c print_char.c print_hex.c print_number.c print_pointer.c print_unsigned.c
 
 
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+
+OFILES = $(SRC_NAME:.c=.o)
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OFILES)
+	@ar rc $(NAME) $(OFILES)
+	@ranlib $(NAME)
+	@echo "Compilation:\033[92m OK\033[0m"
 
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: $(SRC_PATH)/%.c
+	$(CC) -c $(CFLAGS) -o $@ $< -I includes
 
 clean:
-	$(RM) $(OBJS)  # Supprime les fichiers objets de printf
+	@rm -rf $(OFILES)
+	@echo "Deleting:\n\033[33m $(OFILES)\033[0m"
 
 fclean: clean
-	$(RM) $(NAME)  # Supprime la librairie statique
+	@rm -rf $(NAME)
+	@echo "Deleting:\n\033[33m $(NAME)\033[0m"
 
-re: fclean all
+re : fclean all
 
-obj:
-	@echo $(OBJS)
-
-.PHONY: all clean fclean re obj
+.PHONY: all clean fclean re

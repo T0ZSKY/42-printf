@@ -51,11 +51,3 @@ int ft_printf(const char *str, ...)
     return (len);
 }
 
-#include <stdio.h>
-
-int main()
-{
-	unsigned int	x = 42;
-    ft_printf("%p", (void *)NULL);
-    return 0;
-}
