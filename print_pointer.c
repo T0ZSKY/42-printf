@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 04:32:08 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/09 06:29:48 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/09 06:51:19 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	write_pointer(va_list args)
 
 	ptr = va_arg(args, void *);
 	addr = (unsigned long long)ptr;
-	len = 2;  // pour "0x"
+	len = 2;
 	if (ptr == NULL)
 	{
 		write(1, "(nil)", 5);
 		return (3);
 	}
-	write(1, "0x", 2);  // afficher "0x"
+	write(1, "0x", 2);
 	ft_putnbr_base(addr, "0123456789abcdef", &len);
 	return (len);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 03:40:46 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/09 04:28:47 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/09 06:51:31 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ static void	ft_itoa_helper(int n, char *str, int len)
 int	write_number(va_list args)
 {
 	int		num;
-	char	str[12];  // Suffisant pour un int (-2147483648 à 2147483647)
+	char	str[12];
 	int		len;
 
 	num = va_arg(args, int);
-	if (num == INT_MIN)  // Cas spécial pour -2147483648
+	if (num == INT_MIN)
 	{
 		write(1, "-2147483648", 11);
 		return (11);
