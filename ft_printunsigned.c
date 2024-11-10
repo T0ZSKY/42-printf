@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_char.c                                       :+:      :+:    :+:   */
+/*   ft_printunsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 04:37:51 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/09 06:52:41 by tomlimon         ###   ########.fr       */
+/*   Created: 2024/11/10 14:41:37 by tomlimon          #+#    #+#             */
+/*   Updated: 2024/11/10 14:42:23 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	write_char(va_list args)
+int	ft_print_unsigned(unsigned int nbr)
 {
-	char	c;
+	int	count;
 
-	c = (char)va_arg(args, int);
-	write(1, &c, 1);
-	return (1);
-}
-
-int	write_string(va_list args)
-{
-	char	*str;
-	int		len;
-
-	str = va_arg(args, char *);
-	len = 0;
-	if (!str)
-		str = "(null)";
-	while (str[len])
+	count = 0;
+	if (nbr >= 10)
 	{
-		write(1, &str[len], 1);
-		len++;
+		count += ft_print_unsigned(nbr / 10);
+		count += ft_printchar(nbr % 10 + '0');
 	}
-	return (len);
+	else
+		count += ft_printchar(nbr + '0');
+	return (count);
 }

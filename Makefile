@@ -6,7 +6,7 @@
 #    By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/09 00:55:38 by tomlimon          #+#    #+#              #
-#    Updated: 2024/11/09 04:48:13 by tomlimon         ###   ########.fr        #
+#    Updated: 2024/11/10 23:07:56 by tomlimon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 SRC_PATH = ./
 
-SRC_NAME = printf.c print_char.c print_hex.c print_number.c print_pointer.c print_unsigned.c
+SRC_NAME = ft_printchar.c ft_printf.c ft_printpt.c ft_printhex.c ft_printnbr.c ft_printunsigned.c
 
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
